@@ -1,6 +1,7 @@
 package com.spring1;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class App {
@@ -9,10 +10,12 @@ public class App {
 		// TODO Auto-generated method stub
 		
 		//1) This creates spring bean container 
-		ApplicationContext context=new FileSystemXmlApplicationContext("beans.xml");
+		ApplicationContext context=new ClassPathXmlApplicationContext("com/spring/bean/beans.xml");
 		
 		Person person=(Person)context.getBean("person");
 		person.speak();
+		//2) Added close on filesystem
+		((ClassPathXmlApplicationContext)context).close();
 	}
 
 }
