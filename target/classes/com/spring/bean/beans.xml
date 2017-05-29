@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
-	default-destroy-method="destroy" default-init-method="init">
+	default-destroy-method="destroy" default-init-method="init"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
 	<bean id="person" class="com.spring1.Person" scope="singleton"
@@ -29,5 +30,10 @@
 		<constructor-arg value="123 road" name="street"></constructor-arg>
 		<constructor-arg name="postcode" value="589"></constructor-arg>
 	</bean>
+	<bean id="address1" class="com.spring1.Address" p:street="23 road" p:postcode="3200">
+		
+	</bean>
+	
+	
 	<bean id="personfactory" class="com.spring1.PersonFactoryClass"></bean>
 </beans>
