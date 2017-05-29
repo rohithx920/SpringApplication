@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="person" class="com.spring1.Person">
+	<bean id="person" class="com.spring1.Person" scope="prototype">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Rohith" type="String" name="name"></constructor-arg>
 		<property name="taxid" value="1234"></property>
