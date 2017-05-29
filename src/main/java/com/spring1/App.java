@@ -13,8 +13,10 @@ public class App {
 		ApplicationContext context=new ClassPathXmlApplicationContext("com/spring/bean/beans.xml");
 		
 		Person person=(Person)context.getBean("person");
-		
 		person.speak();
+		
+		Address address=(Address) context.getBean("address");
+		System.out.println(address);
 		System.out.println(person.toString());
 		//2) Added close on filesystem
 		((ClassPathXmlApplicationContext)context).close();

@@ -5,8 +5,14 @@
 
 
 	<bean id="person" class="com.spring1.Person">
-	<constructor-arg value="777" name="id" type="int"></constructor-arg>
-	<constructor-arg value="Rohith" type="String" name="name"></constructor-arg>
-	<property name="taxid" value="1234"></property>
+		<constructor-arg value="777" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Rohith" type="String" name="name"></constructor-arg>
+		<property name="taxid" value="1234"></property>
+		<property name="address" ref="address">
+		</property>
+	</bean>
+	<bean id="address" class="com.spring1.Address">
+		<constructor-arg value="123 road" name="street"></constructor-arg>
+		<constructor-arg name="postcode" value="589"></constructor-arg>
 	</bean>
 </beans>
