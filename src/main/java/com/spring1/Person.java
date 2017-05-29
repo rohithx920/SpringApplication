@@ -17,6 +17,13 @@ public Person(int id, String name) {
 	this.name = name;
 }
 
+public void onCreate(){
+	System.out.println("Person Created" +this);
+}
+
+public void onDestroy(){
+	System.out.println("Person Destroyed");
+}
 
 public void setTaxid(int taxid) {
 	this.taxid = taxid;

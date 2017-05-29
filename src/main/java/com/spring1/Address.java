@@ -12,5 +12,9 @@ public class Address {
 	public String toString() {
 		return "Address [street=" + street + ", postcode=" + postcode + "]";
 	}
+	//once bean is created they will run 
+	public void init(){
+		System.out.println("Bean Created"+this);
+	}
 		
 }
