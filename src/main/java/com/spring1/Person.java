@@ -10,6 +10,11 @@ public class Person {
 public Person(){
 	
 }
+//Factory method
+public static Person getInstance(int id, String name){
+	System.out.println("creating function using factory method");
+	return new Person(id, name);
+}
 
 public Person(int id, String name) {
 	super();

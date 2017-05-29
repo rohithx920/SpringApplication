@@ -6,15 +6,28 @@
 
 
 	<bean id="person" class="com.spring1.Person" scope="singleton"
-		init-method="onCreate" destroy-method="onDestroy">
+		init-method="onCreate" destroy-method="onDestroy"
+		factory-method="getInstance">
 		<constructor-arg value="777" name="id" type="int"></constructor-arg>
 		<constructor-arg value="Rohith" type="String" name="name"></constructor-arg>
 		<property name="taxid" value="1234"></property>
 		<property name="address" ref="address">
 		</property>
 	</bean>
+	<bean id="person2" class="com.spring1.Person" scope="singleton"
+		init-method="onCreate" destroy-method="onDestroy"
+		factory-method="createPerson" factory-bean="personfactory">
+		<constructor-arg value="654" name="id" type="int"></constructor-arg>
+		<constructor-arg value="Mike" type="String" name="name"></constructor-arg>
+		<property name="taxid" value="1234"></property>
+		<property name="address" ref="address">
+		</property>
+	</bean>
+
+
 	<bean id="address" class="com.spring1.Address">
 		<constructor-arg value="123 road" name="street"></constructor-arg>
 		<constructor-arg name="postcode" value="589"></constructor-arg>
 	</bean>
+	<bean id="personfactory" class="com.spring1.PersonFactoryClass"></bean>
 </beans>
