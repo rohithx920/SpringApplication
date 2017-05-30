@@ -15,4 +15,29 @@
 			</list>
 		</constructor-arg>
 	</bean>
+	
+	<bean name="jungle" class="com.spring2.Jungle">	
+	<property name="largest" ref="elephant"></property>
+		<property name="animals">
+			<list>
+				<ref bean="snake" />
+				<ref bean="elephant" />
+				<ref bean="lion" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="lion" class="com.spring2.Animal">
+		<property name="name" value="rana"></property>
+		<property name="type" value="lion"></property>
+	</bean>
+	<bean id="elephant" class="com.spring2.Animal">
+		<property name="name" value="bahu"></property>
+		<property name="type" value="elephant"></property>
+	</bean>
+
+	<bean id="snake" class="com.spring2.Animal">
+		<property name="name" value="balla"></property>
+		<property name="type" value="snake"></property>
+	</bean>
 </beans>
