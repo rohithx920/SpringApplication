@@ -16,15 +16,14 @@
 		</constructor-arg>
 	</bean>
 	
-	<bean name="jungle" class="com.spring2.Jungle">	
-	<property name="largest" ref="elephant"></property>
-		<property name="animals">
-			<list>
-				<ref bean="snake" />
-				<ref bean="elephant" />
-				<ref bean="lion" />
-			</list>
-		</property>
+	<bean name="jungle" class="com.spring2.Jungle">
+	<property name="foods">
+		<props>
+			<prop key="gorilla">bananna</prop>
+			<prop key="panda">bamboo</prop>
+			<prop key="snake">eggs</prop>
+		</props>
+	</property>
 	</bean>
 
 	<bean id="lion" class="com.spring2.Animal">
