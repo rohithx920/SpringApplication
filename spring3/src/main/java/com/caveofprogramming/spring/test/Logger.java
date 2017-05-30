@@ -1,5 +1,5 @@
 package com.caveofprogramming.spring.test;
-
+import javax.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 
@@ -28,8 +28,7 @@ public class Logger {
 	public void setConsoleWriter(LogWriter writer) {
 		this.consoleWriter = writer;
 	}
-	@Autowired
-	@Qualifier("toConsole")
+	@Resource(name="fileWriter")
 	public void setFileWriter(FileWriter fileWriter) {
 		this.fileWriter = fileWriter;
 	}
@@ -41,6 +40,16 @@ public class Logger {
 	public void writeConsole(String text) {
 		if(consoleWriter !=null)
 		consoleWriter.write(text);
+	}
+	//jsr 250 annotations
+	@PostConstruct
+	public void init(){
+		System.out.println("init");
+	}
+	
+	@PreDestroy
+	public void destroy(){
+		System.out.println("destroy");
 	}
 
 }
