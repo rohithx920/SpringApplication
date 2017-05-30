@@ -6,7 +6,7 @@
 
 
 	<bean id="logger" class="com.caveofprogramming.spring.test.Logger"
-		autowire="byName">
+		autowire="constructor">
 
 	</bean>
 
