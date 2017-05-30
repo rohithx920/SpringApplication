@@ -2,20 +2,6 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-
-	<bean name="basket" class="com.spring2.FruitBasket">
-		<constructor-arg value="Rohith's Basket"></constructor-arg>
-		<constructor-arg>
-			<list>
-				<value>Apple</value>
-				<value>Orange</value>
-				<value>Grapes</value>
-				<value>Pears</value>
-			</list>
-		</constructor-arg>
-	</bean>
-	
 	<bean name="jungle" class="com.spring2.Jungle">
 	<property name="foods">
 		<props>
@@ -23,6 +9,13 @@
 			<prop key="panda">bamboo</prop>
 			<prop key="snake">eggs</prop>
 		</props>
+	</property>
+	<property name="animals">
+		<map>
+			<entry key="lion" value-ref="lion"></entry>
+			<entry key="elephant" value-ref="elephant"></entry>
+			<entry key="snake" value-ref="snake"></entry>
+		</map>
 	</property>
 	</bean>
 
