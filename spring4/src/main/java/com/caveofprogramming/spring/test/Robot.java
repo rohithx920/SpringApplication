@@ -1,7 +1,10 @@
 package com.caveofprogramming.spring.test;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
-
+@Component
 public class Robot {
 	
 	private String id = "Default robot";
@@ -10,12 +13,12 @@ public class Robot {
 	public void speak() {
 		System.out.println(id + ": " + speech);
 	}
-
-	public void setId(String id) {
+	@Autowired
+	public void setId(@Value("#{randomText.getText()?.length()}")String id) {
 		this.id = id;
 	}
-
-	public void setSpeech(String speech) {
+	@Autowired
+	public void setSpeech(@Value("#{randomText.getText()}")String speech) {
 		this.speech = speech;
 	}
 	
