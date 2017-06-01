@@ -14,11 +14,11 @@ public class Robot {
 		System.out.println(id + ": " + speech);
 	}
 	@Autowired
-	public void setId(@Value("#{randomText.getText()?.length()}")String id) {
+	public void setId(@Value("${jdbc.user}")String id) {
 		this.id = id;
 	}
 	@Autowired
-	public void setSpeech(@Value("#{randomText.getText()}")String speech) {
+	public void setSpeech(@Value("${jdbc.password}")String speech) {
 		this.speech = speech;
 	}
 	
